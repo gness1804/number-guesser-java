@@ -23,10 +23,10 @@
         android:id="@+id/button"
         android:layout_width="136dp"
         android:layout_height="60dp"
+        android:onClick="compareNumbers"
         android:text="@string/enter_number"
-        tools:layout_editor_absoluteX="253dp"
-        tools:text="@string/enter_number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
         app:layout_constraintLeft_toRightOf="@+id/editText"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        tools:text="@string/enter_number" />
 </android.support.constraint.ConstraintLayout>
