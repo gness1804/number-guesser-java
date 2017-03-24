@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.example.grahamnessler.numberguesser.MESSAGE";
+//    public static final String EXTRA_MESSAGE = "com.example.grahamnessler.numberguesser.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,10 +16,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void compareNumbers(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        int message = editText.getText();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        EditText num = (EditText) findViewById(R.id.editText);
+        int val = Integer.parseInt(num.getText().toString());
+        domath.addNums(val);
     }
 }

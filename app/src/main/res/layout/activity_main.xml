@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/user_number_input"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,4 +29,5 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="16dp"
         tools:text="@string/enter_number" />
+
 </android.support.constraint.ConstraintLayout>
