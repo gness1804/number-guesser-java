@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -16,8 +17,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void compareNumbers(View view) {
+        TextView output = (TextView) findViewById(R.id.numberOutput);
         EditText num = (EditText) findViewById(R.id.editText);
-        int val = Integer.parseInt(num.getText().toString());
+        String textNum = num.getText().toString();
+        int val = Integer.parseInt(textNum);
+        output.setText(textNum);
         domath.addNums(val);
     }
 }
