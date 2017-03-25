@@ -17,11 +17,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void compareNumbers(View view) {
-        TextView output = (TextView) findViewById(R.id.numberOutput);
-        EditText num = (EditText) findViewById(R.id.editText);
-        String textNum = num.getText().toString();
-        int val = Integer.parseInt(textNum);
-        output.setText(textNum);
-        domath.addNums(val);
+        TextView numberDisplayField = (TextView) findViewById(R.id.numberOutput);
+        EditText userNum = (EditText) findViewById(R.id.editText);
+        String textNum = userNum.getText().toString();
+        String displayText = "Your last guess was: " + textNum;
+        numberDisplayField.setText(displayText);
+        int userNumAsInt = Integer.parseInt(textNum);
+        domath.addNums(userNumAsInt);
     }
 }
