@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Number Guesser</string>
-    <string name="enter_number">Enter a Number</string>
+    <string name="enter_number">Guess!</string>
     <string name="user_number_input">Your Number</string>
 </resources>

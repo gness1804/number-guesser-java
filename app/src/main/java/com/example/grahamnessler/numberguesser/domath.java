@@ -8,9 +8,9 @@ import java.util.Random;
 
 public class domath {
 
-    public static int setRandomNum () {
+    public static int setRandomNum (int min, int max) {
         Random rand = new Random();
-        int computerNum = rand.nextInt(50) + 1;
+        int computerNum = rand.nextInt(max) + min;
         return computerNum;
     }
 
