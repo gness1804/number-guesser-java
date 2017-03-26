@@ -1,8 +1,5 @@
 package com.example.grahamnessler.numberguesser;
 
-import android.util.Log;
-import android.widget.TextView;
-
 import java.util.Random;
 
 /**
