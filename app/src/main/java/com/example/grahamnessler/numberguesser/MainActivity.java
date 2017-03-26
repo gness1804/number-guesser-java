@@ -22,18 +22,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void compareNumbers(View view) {
         TextView numberDisplayField = (TextView) findViewById(R.id.numberOutput);
+        TextView messageField = (TextView) findViewById(R.id.guessClue);
         EditText userInput = (EditText) findViewById(R.id.editText);
         String textNum = userInput.getText().toString();
         String displayText = "Your last guess was: " + textNum;
         numberDisplayField.setText(displayText);
         userNumber = Integer.parseInt(textNum);
         if (userNumber > computerNumber) {
-            Log.d("Message", "Your number is too high.");
+            String message = "Your number is too high.";
+            messageField.setText(message);
         } else if (userNumber < computerNumber) {
-            Log.d("Message", "Your number is too low.");
+            String message = "Your number is too low.";
+            messageField.setText(message);
         } else {
-            Log.d("Message", "You win!");
+            String message = "You win!";
+            messageField.setText(message);
             computerNumber = domath.setRandomNum();
+            String str = Integer.toString(computerNumber);
+            Log.d("The computer number is ", str);
         }
     }
 }
