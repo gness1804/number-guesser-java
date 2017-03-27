@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         computerNumber = domath.setRandomNum(min, max);
+        displayMinMax();
+    }
+
+    public void displayMinMax () {
         TextView minField = (TextView) findViewById(R.id.minOutput);
         String message1 = "Current Min: " + min;
         minField.setText(message1);
@@ -44,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (userMinStr.length() > 0 || userMaxStr.length() > 0) {
             computerNumber = domath.setRandomNum(min, max);
-            String str = Integer.toString(computerNumber);
-            Log.d("The computer number is ", str);
+            displayMinMax();
         }
     }
 
