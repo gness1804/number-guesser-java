@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.grahamnessler.numberguesser.MainActivity">
 
+    <TextView
+        android:id="@+id/maxOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="305dp"
+        android:layout_marginTop="184dp"
+        android:text="@string/max_output"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/userMin"
         android:layout_width="188dp"
@@ -103,8 +113,8 @@
         android:layout_height="wrap_content"
         android:text="@string/min_output"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="188dp"
-        android:layout_marginLeft="79dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginLeft="25dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

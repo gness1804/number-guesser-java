@@ -18,8 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         computerNumber = domath.setRandomNum(min, max);
-        String str = Integer.toString(computerNumber);
-        Log.d("The computer number is ", str);
+        TextView minField = (TextView) findViewById(R.id.minOutput);
+        String message1 = "Current Min: " + min;
+        minField.setText(message1);
+        TextView maxField = (TextView) findViewById(R.id.maxOutput);
+        String message2 = "Current Max: " + max;
+        maxField.setText(message2);
     }
 
     public void setMinMax (View view) {

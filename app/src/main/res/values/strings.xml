@@ -7,4 +7,5 @@
     <string name="enter_a_number">Please enter a number.</string>
     <string name="enter_new_max">Enter New Max</string>
     <string name="set_min_max">Set Min/Max</string>
+    <string name="max_output">Current Max:</string>
 </resources>
