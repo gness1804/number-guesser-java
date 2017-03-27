@@ -56,7 +56,13 @@ public class MainActivity extends AppCompatActivity {
         numberDisplayField.setText(displayText);
         userNumber = Integer.parseInt(textNum);
 
-        if (userNumber > computerNumber) {
+        if (userNumber > max) {
+            String message = "Your number is above the max. Please try again.";
+            messageField.setText(message);
+        } else if (userNumber < min) {
+            String message = "Your number is below the min. Please try again.";
+            messageField.setText(message);
+        } else if (userNumber > computerNumber) {
             String message = "Your number is too high.";
             messageField.setText(message);
         } else if (userNumber < computerNumber) {
