@@ -17,8 +17,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        computerNumber = domath.setRandomNum(min, max);
+        setNewRandomNumber();
         displayMinMax();
+    }
+
+    public void setNewRandomNumber () {
+        computerNumber = domath.setRandomNum(min, max);
     }
 
     public void displayMinMax () {
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             max = userMaxInt;
         }
         if (userMinStr.length() > 0 || userMaxStr.length() > 0) {
-            computerNumber = domath.setRandomNum(min, max);
+            setNewRandomNumber();
             displayMinMax();
         }
     }
@@ -78,9 +82,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             String message = "You win!";
             messageField.setText(message);
-            computerNumber = domath.setRandomNum(min, max);
-            String str = Integer.toString(computerNumber);
-            Log.d("The computer number is ", str);
+            setNewRandomNumber();
         }
     }
 }
