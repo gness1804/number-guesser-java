@@ -19,6 +19,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setNewRandomNumber();
         displayMinMax();
+        logComputerNum();
+    }
+
+    public void adjustMinAndMaxByTen () {
+        min = min - 10;
+        max = max + 10;
+        displayMinMax();
+    }
+
+    public void logComputerNum () {
+        String str = Integer.toString(computerNumber);
+        Log.d("The computer number is ", str);
     }
 
     public void setNewRandomNumber () {
@@ -53,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (userMinStr.length() > 0 || userMaxStr.length() > 0) {
             setNewRandomNumber();
             displayMinMax();
+            logComputerNum();
         }
     }
 
@@ -83,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
             String message = "You win!";
             messageField.setText(message);
             setNewRandomNumber();
+            adjustMinAndMaxByTen();
+            logComputerNum();
         }
     }
 }
