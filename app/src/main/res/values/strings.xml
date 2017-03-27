@@ -2,4 +2,9 @@
     <string name="app_name">Number Guesser</string>
     <string name="enter_number">Guess!</string>
     <string name="user_number_input">Your Number</string>
+    <string name="min_output">Current Min:</string>
+    <string name="enter_new_min">Enter New Min</string>
+    <string name="enter_a_number">Please enter a number.</string>
+    <string name="enter_new_max">Enter New Max</string>
+    <string name="set_min_max">Set Min/Max</string>
 </resources>
