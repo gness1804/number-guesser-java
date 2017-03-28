@@ -1,11 +1,13 @@
 package com.example.grahamnessler.numberguesser;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int computerNumber;
@@ -46,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
         maxField.setText(message2);
     }
 
+    public void showMinMaxErrorToast () {
+        Context context = getApplicationContext();
+        CharSequence text = "Oops! Your min must be less than your max!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
     public void setMinMax (View view) {
         EditText userMin = (EditText) findViewById(R.id.userMin);
         EditText userMax = (EditText) findViewById(R.id.userMax);
@@ -54,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
         int userMinInt = Integer.parseInt(userMinStr);
         int userMaxInt = Integer.parseInt(userMaxStr);
         if (userMinInt >= userMaxInt) {
-            throw  new  Error("Oops! Your min must be less than your max!");
+           showMinMaxErrorToast();
+            return;
         }
         if (userMinStr.length() > 0) {
             min = userMinInt;
