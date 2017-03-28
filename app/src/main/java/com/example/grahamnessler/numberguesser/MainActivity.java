@@ -29,7 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void styleTheApp () {
         TextView numberDisplayField = (TextView) findViewById(R.id.numberOutput);
+        TextView messageField = (TextView) findViewById(R.id.guessClue);
         numberDisplayField.setTypeface(null, Typeface.BOLD);
+        messageField.setTypeface(null, Typeface.BOLD);
+        numberDisplayField.setTextSize(24);
+        messageField.setTextSize(24);
     }
 
     public void clearInputFields () {
