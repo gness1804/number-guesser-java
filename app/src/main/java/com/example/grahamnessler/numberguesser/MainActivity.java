@@ -24,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
         logComputerNum();
     }
 
+    public void clearInputFields () {
+        EditText userInput = (EditText) findViewById(R.id.mainNumberInput);
+        EditText userMin = (EditText) findViewById(R.id.userMin);
+        EditText userMax = (EditText) findViewById(R.id.userMax);
+        userInput.setText("");
+        userMin.setText("");
+        userMax.setText("");
+    }
+
     public void adjustMinAndMaxByTen () {
         min = min - 10;
         max = max + 10;
@@ -86,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             displayMinMax();
             logComputerNum();
             notifyUserOfNewRandomNum();
+            clearInputFields();
         }
     }
 
@@ -93,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         TextView numberDisplayField = (TextView) findViewById(R.id.numberOutput);
         TextView messageField = (TextView) findViewById(R.id.guessClue);
 
-        EditText userInput = (EditText) findViewById(R.id.editText);
+        EditText userInput = (EditText) findViewById(R.id.mainNumberInput);
 
         String textNum = userInput.getText().toString();
         String displayText = "Your last guess was: " + textNum;
@@ -120,5 +130,6 @@ public class MainActivity extends AppCompatActivity {
             logComputerNum();
             notifyUserOfNewRandomNum();
         }
+        clearInputFields();
     }
 }
