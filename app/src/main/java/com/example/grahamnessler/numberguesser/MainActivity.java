@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
         maxField.setText(message2);
     }
 
+    public void notifyUserOfNewRandomNum () {
+        Context context = getApplicationContext();
+        CharSequence text = "New random number generated!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
     public void showMinMaxErrorToast () {
         Context context = getApplicationContext();
         CharSequence text = "Oops! Your min must be less than your max!";
@@ -77,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             setNewRandomNumber();
             displayMinMax();
             logComputerNum();
+            notifyUserOfNewRandomNum();
         }
     }
 
@@ -109,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
             setNewRandomNumber();
             adjustMinAndMaxByTen();
             logComputerNum();
+            notifyUserOfNewRandomNum();
         }
     }
 }
