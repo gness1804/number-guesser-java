@@ -1,6 +1,8 @@
 package com.example.grahamnessler.numberguesser;
 
+import android.animation.TypeEvaluator;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
         setNewRandomNumber();
         displayMinMax();
         logComputerNum();
+        styleTheApp();
+    }
+
+    public void styleTheApp () {
+        TextView numberDisplayField = (TextView) findViewById(R.id.numberOutput);
+        numberDisplayField.setTypeface(null, Typeface.BOLD);
     }
 
     public void clearInputFields () {
