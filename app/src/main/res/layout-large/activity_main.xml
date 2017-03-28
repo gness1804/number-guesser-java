@@ -10,7 +10,7 @@
         android:id="@+id/maxOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
+        android:layout_marginLeft="656dp"
         android:layout_marginTop="184dp"
         android:text="@string/max_output"
         app:layout_constraintLeft_toLeftOf="parent"
