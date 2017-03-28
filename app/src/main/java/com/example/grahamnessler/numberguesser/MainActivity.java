@@ -33,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
         userMax.setText("");
     }
 
+    public void clearNotificationFields () {
+        TextView numberDisplayField = (TextView) findViewById(R.id.numberOutput);
+        TextView messageField = (TextView) findViewById(R.id.guessClue);
+        numberDisplayField.setText("");
+        messageField.setText("");
+    }
+
     public void adjustMinAndMaxByTen () {
         min = min - 10;
         max = max + 10;
@@ -71,6 +78,17 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+    }
+
+    public void resetGame(View view) {
+        min = 1;
+        max = 50;
+        setNewRandomNumber();
+        displayMinMax();
+        logComputerNum();
+        notifyUserOfNewRandomNum();
+        clearInputFields();
+        clearNotificationFields();
     }
 
     public void setMinMax (View view) {

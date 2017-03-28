@@ -8,4 +8,5 @@
     <string name="enter_new_max">Enter New Max</string>
     <string name="set_min_max">Set Min/Max</string>
     <string name="max_output">Current Max:</string>
+    <string name="reset_button">Reset Game</string>
 </resources>
