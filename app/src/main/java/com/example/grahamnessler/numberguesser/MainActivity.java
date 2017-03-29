@@ -94,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
+    public void throwEmptyError () {
+        String error = "Error: you must enter a valid number.";
+        Context context = getApplicationContext();
+        CharSequence text = error;
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
     public void resetGame(View view) {
         min = 1;
         max = 50;
@@ -138,30 +147,35 @@ public class MainActivity extends AppCompatActivity {
         EditText userInput = (EditText) findViewById(R.id.mainNumberInput);
 
         String textNum = userInput.getText().toString();
-        String displayText = "Your last guess was: " + textNum;
-        numberDisplayField.setText(displayText);
-        userNumber = Integer.parseInt(textNum);
 
-        if (userNumber > max) {
-            String message = "Your number is above the max. Please try again.";
-            messageField.setText(message);
-        } else if (userNumber < min) {
-            String message = "Your number is below the min. Please try again.";
-            messageField.setText(message);
-        } else if (userNumber > computerNumber) {
-            String message = "Your number is too high.";
-            messageField.setText(message);
-        } else if (userNumber < computerNumber) {
-            String message = "Your number is too low.";
-            messageField.setText(message);
+        if (!textNum.isEmpty()) {
+            String displayText = "Your last guess was: " + textNum;
+            numberDisplayField.setText(displayText);
+            userNumber = Integer.parseInt(textNum);
+
+            if (userNumber > max) {
+                String message = "Your number is above the max. Please try again.";
+                messageField.setText(message);
+            } else if (userNumber < min) {
+                String message = "Your number is below the min. Please try again.";
+                messageField.setText(message);
+            } else if (userNumber > computerNumber) {
+                String message = "Your number is too high.";
+                messageField.setText(message);
+            } else if (userNumber < computerNumber) {
+                String message = "Your number is too low.";
+                messageField.setText(message);
+            } else {
+                String message = "You win!";
+                messageField.setText(message);
+                setNewRandomNumber();
+                adjustMinAndMaxByTen();
+                logComputerNum();
+                notifyUserOfNewRandomNum();
+            }
+            clearInputFields();
         } else {
-            String message = "You win!";
-            messageField.setText(message);
-            setNewRandomNumber();
-            adjustMinAndMaxByTen();
-            logComputerNum();
-            notifyUserOfNewRandomNum();
+            throwEmptyError();
         }
-        clearInputFields();
     }
 }
