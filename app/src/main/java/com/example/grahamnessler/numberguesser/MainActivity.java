@@ -119,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
         EditText userMax = (EditText) findViewById(R.id.userMax);
         String userMinStr = userMin.getText().toString();
         String userMaxStr = userMax.getText().toString();
+        if (userMinStr.isEmpty() || userMaxStr.isEmpty()) {
+            throwEmptyError();
+            return;
+        }
         int userMinInt = Integer.parseInt(userMinStr);
         int userMaxInt = Integer.parseInt(userMaxStr);
         if (userMinInt >= userMaxInt) {
