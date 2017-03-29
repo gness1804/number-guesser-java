@@ -1,14 +1,11 @@
 package com.example.grahamnessler.numberguesser;
 
-import android.animation.TypeEvaluator;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         userInput.setText("");
         userMin.setText("");
         userMax.setText("");
+        userInput.setEnabled(false);
+        userInput.setEnabled(true);
+        userMin.setEnabled(false);
+        userMin.setEnabled(true);
+        userMax.setEnabled(false);
+        userMax.setEnabled(true);
     }
 
     public void clearNotificationFields () {
